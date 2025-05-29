@@ -1,0 +1,75 @@
+@import url(http://fonts.googleapis.com/css?family=Play);
+@import url(http://fonts.googleapis.com/css?family=Monoton);
+
+/* Reset******************************************************* */
+*{margin: 0; padding: 0;}
+ol, ul{list-style: none;}
+a{color: #bbb; text-decoration: none;}
+body{background: #111; width: 100%; height: 100%; position: fixed;}
+
+/* Background************************************************** */
+.vid{width: 100%; height: 100%; position: fixed; opacity:0.9;}
+.vid video{width: 100%; min-width: 1024px;}
+
+/* Logo******************************************************** */
+h1{position: fixed; top: 40px; left: 40px; z-index: 10;}
+h1 img{width: 280px;}
+header{background: linear-gradient(-45deg,rgb(230, 252, 85), rgb(185, 251, 5), rgb(151, 224, 49)); transform: skewX(-40deg); width: 700px; height: 100%; position: fixed; top: 0; left: -420px;}
+
+/* GNB 1depth************************************************** */
+#gnb{width: 220px; position: absolute; top: 150px; right: 0;}
+#gnb>li{position: relative;}
+#gnb>li>a{color: #222; font: bold 18px/3 play; display: block; width: 220px; height: 50px; box-sizing: border-box; padding-right:40px; text-align:right;}
+#gnb>li.on>a{background: #111; color: #fff;}
+#gnb>li:hover>a{background: #555; color: #fff;}
+#gnb em{display: inline-block; transform: skewX(40deg);}
+#gnb em i{margin-right: 20px;}
+
+/* GNB 2depth************************************************** */
+#gnb ul{position: absolute; top: 0; left: 0; opacity: 0; transition: 0.4s;}
+#gnb>li:hover ul{opacity: 0.8; left: 205px;}
+#gnb ul a{background: #222; border-bottom: 1px solid #b9fb05; color: #fff; font:bold 16px/2.5 arial; display: block; width: 150px; height: 40px; margin-bottom: 3px; padding-left: 50px; box-sizing: border-box; transition: 0.5s;}
+#gnb ul a:hover{background:#b9fb05; color:#333;}
+#gnb li.on ul{opacity: 0.8; top: -10px; left: 205px;}
+#gnb li.on ul a{background:#444; opacity:0.7;}
+
+/* SNS********************************************************* */
+#sns{position: fixed; top: 60px; right: 50px;}
+#sns li{margin-right: 30px; float: left;}
+#sns .fa{color: #b9fb05; font-size: 25px; opacity: 0.5; transform: scale(1); transition: 0.5s;}
+#sns .fa:hover{opacity: 1; transform: scale(1.4);}
+
+/* Text Box**************************************************** */
+.txtBox{width: 340px; height: 280px; position: fixed; top: 200px; right: 70px;}
+.txt{color: #bbb; font-family: play; font-size: 34px; letter-spacing: -2px; position: absolute; top: 200px; right: 0;}
+.txt b{color: #b9fb05; font: bold 34px arial; margin-left: 20px;}
+.tit{color: #b9fb05; font-family: 'Monoton', cursive; font-size: 160px; position: absolute; top: 0; right: 0; letter-spacing: -1px;}
+.tit em{color: #fff; font-family: play; font-size: 50px;}
+
+/* Side******************************************************** */
+#side{background: #111; width: 800px; height: 100%; position: fixed; bottom: 0; right: -800px; opacity: 0.5; transform: skewX(-40deg); transition: 0.5s;}
+#side:hover{opacity: 0.8; right: -500px;}
+#side .contents{background: #000; width: 400px; height: 100%; padding: 10px; box-sizing: border-box; position: absolute; bottom: 0; left: 150px; transition: 1s;}
+#side:hover .contents{left: 50px;}
+
+/* Contents**************************************************** */
+#side .contents p{width: 300px; height: 100px; position: absolute; left: 50px;}
+#side .contents p em{color: #a0bd50; font: bold 16px/1.7 arial; display: inline-block; transform: skewX(40deg);}
+#side .contents p img{width: 300px; height: 70px; opacity: 0.3; transition: 0.5s;}
+#side .contents p img:hover{opacity:1;}
+#side .contents p:nth-child(1) {bottom:270px; transform: translateX(200px); transition: 0.4s;}
+#side .contents p:nth-child(2) {bottom:160px; transform: translateX(200px); transition: 0.8s;}
+#side .contents p:nth-child(3) {bottom:50px; transform: translateX(200px); transition: 1.2s;}
+#side:hover .contents p {transform: translateX(0px);}	
+
+/* Auto Rolling************************************************ */
+#side .btnContents{color: #b9fb05; width: 150px; height: 50px; position: absolute; bottom: 40px; left: 100px; transform: skewX(40deg);}
+#side:hover .btnContents{left: 700px;}
+.btnContents i{font-size: 60px; position: absolute; bottom: 0; right: 0; opacity: 1;}
+.btnContents i:nth-child(1){animation: ani linear 1.5s 0s infinite;}
+.btnContents i:nth-child(2){animation: ani linear 1.5s 0.5s infinite;}
+.btnContents i:nth-child(3){animation: ani linear 1.5s 1.0s infinite;}
+@keyframes ani{
+  0%{opacity: 1; right: 0; transform: scale(1);}
+  100%{opacity: 0; right: 100px; transform: scale(1.5);}
+}

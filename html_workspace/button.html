@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css button</title>
+  <style>
+    #btn1 a{text-decoration: none;color:#ff6347;}
+    #btn1{
+      width:200px;
+      height:50px;
+      border: 3px solid #ff6347;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      line-height: 50px;
+    }
+    #btn1 .mask{
+      width:150%;
+      height: 100%;
+      background: #ff6347;     
+      position: absolute;
+      top:0;
+      left: -350px;
+      transform: skewX(45deg);
+      transition: 0.5s;
+      opacity: 0.3;
+    }
+    #btn1:hover .mask{
+      left:-25px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="btn1">
+    <a href="http://www.naver.com">네이버</a>
+    <div class="mask"></div>
+  </div>
+</body>
+</html>

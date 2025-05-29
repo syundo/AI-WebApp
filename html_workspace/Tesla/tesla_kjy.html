@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tesla: Electric Cars, Solar & Clean Energy</title>
+  <link rel="icon" type="image/png" sizes=" 256x256" href="/images/Alogo1.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style3.css" />	
+  <!-- 부트스트랩 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  
+  <!-- 배경 동영상 -->
+   <figure class="vid">
+    <video loop="loop" autoplay="autoplay" muted>
+      <source src="https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto,q_auto/Cybertruck-Built-For-Any-Planet-Desktop.mp4" type="video/mp4">
+    </video>
+   </figure>
+
+   <!-- 제목 로고 -->
+    <h1><img src="/images/tlogo2.png" id="logo2"></h1>
+    <h1><img src="/images/tlogo3.png" id="logo3"></h1>
+
+    <!-- 헤더 -->
+
+    <header>
+      <ul id="gnb">
+        <li class="on">
+          <a href="#"><em><i class="icon fa-solid fa-plus"></i>Vehicles</em></a>
+          <ul>
+            <li><a href="#"><em><b>Model S</b></em></a></li>
+            <li><a href="#"><em><b>Model 3</b></em></a></li>
+            <li><a href="#"><em><b>Model X</b></em></a></li>
+            <li><a href="#"><em><b>Model Y</b></em></a></li>
+            <li><a href="#" id="a001"><em><b>CyberTruck</b></em></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><em><i class="icon fa-solid fa-plus"></i>Energy</em></a>
+          <ul>
+            <li><a href="#"><em>Solar Panels</em></a></li>
+            <li><a href="#"><em>Solar Roof</em></a></li>
+            <li><a href="#"><em>PowerWall</em></a></li>
+            <li><a href="#"><em>Megapack</em></a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#"><em><i class="icon fa-solid fa-plus"></i>Charging</em></a>
+          <ul>
+            <li><a href="#"><em>Charging</em></a></li>
+            <li><a href="#"><em>Home Charging</em></a></li>
+            <li><a href="#"><em>Supercharging</em></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><em><i class="icon fa-solid fa-plus"></i>Discover</em></a>
+          <ul>
+            <li><a href="#"><em>Demo Drive</em></a></li>
+            <li><a href="#"><em>Collision Center</em></a></li>
+            <li><a href="#"><em>Certified Installer</em></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><em><i class="icon fa-solid fa-plus"></i>Company</em></a>
+          <ul>
+            <li><a href="#"><em>About Tesla</em></a></li>
+            <li><a href="#"><em>Careers</em></a></li>
+            <li><a href="#"><em>Investor Relations</em></a></li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+
+    <!-- SNS 버튼 모음 -->
+
+    <ul id="sns">
+      <li><a href="#"><i class="fa fa-solid fa-user"></i></a></li>
+      <li><a href="#"><i class="fa fa-solid fa-envelope"></i></a></li>
+      <li><a href="#"><i class="fa fa-brands fa-youtube"></i></a></li>
+      <li><a href="#"><i class="fa fa-light fa-globe"></i></a></li>
+    </ul>
+
+    <!-- 제품 시그니처 문구 -->
+    <section class="textbox">
+      <p class="txt1">More utility than a truck.</p><br>
+      <p class="txt2">Faster than a sports car.</p>
+    </section>
+
+
+     <!-- 자동 롤링 버튼 -->
+      <div class="btncontents">
+        <i class="fa fa-angle-double-left"></i>
+        <i class="fa fa-angle-double-left"></i>  
+      </div>
+
+    <!-- 검색창 -->
+     <div id="searchbox">
+      <i class="fa-solid fa-magnifying-glass" id="searchicon"></i>
+      <input type="text">
+     </div>
+
+     <!-- 주문창 -->
+      <div id="orderbox">
+        <div class="dropdown">
+          <button class="dropbtn">$1,203 /mo<i class="fa-solid fa-chevron-down"></i></button>
+          <div class="dropdown-content">
+            <a href="#">$957 /mo (Lease,Wheel Drive)</a>
+            <a href="#">$1,207 /mo (Lease,Cyberbeast)</a>
+            <a href="#">$77,790 (Cash, Wheel Drive)</a>
+            <a href="#">$97,790 (Cash, Cyberbeast)</a>
+          </div>
+        </div>
+        <p>after est.savings</p>
+        <button id="btn001" data-toggle="modal" data-target="#myModal">Order Now</button>
+      </div>
+
+        <!-- 구매 창 -->
+        <div id="modalContainer" class="hidden">
+          <div id="modalContent">
+            <p>모달 창 입니다.</p>
+            <button id="modalCloseButton"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+        </div>
+
+        <script>
+          const modalOpenButton = document.getElementById('btn001');
+          const modalCloseButton = document.getElementById('modalCloseButton');
+          const modal = document.getElementById('modalContainer');
+
+          modalOpenButton.addEventListener('click', () => {
+          modal.classList.remove('hidden');
+          });
+
+          modalCloseButton.addEventListener('click', () => {
+          modal.classList.add('hidden');
+          });
+        </script>
+
+     <!-- 하단 사이드 컨텐츠 메뉴 -->
+     <section id="side">
+      <div class="con">
+        <p>
+          <em>Demo drive</em>
+          <a href="https://www.tesla.com/drive"><video src="https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto,q_auto/Homepage-Demo-Drive-Desktop-NA.mp4" id="demodrivevd" loop="loop" autoplay="autoplay" muted></a>
+        </p>
+        <p>
+          <em>Lastest news</em>
+          <!-- 최근 뉴스 슬라이드 -->
+          <div id="newsCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#newsCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#newsCarousel" data-slide-to="1"></li>
+              <li data-target="#newsCarousel" data-slide-to="2"></li>
+            </ol>
+          
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <a href="https://finance.yahoo.com/news/tesla-stock-falls-as-trump-ends-ev-mandate-looks-to-eliminate-subsidies-152217391.html"><img src="/images/newpic04.png" alt="첫번째 뉴스"></a>
+                <div class="carousel-caption">
+                </div>
+              </div>
+          
+              <div class="item">
+                <a href="https://www.cnbc.com/2025/01/21/tesla-lost-15-billion-in-brand-value-in-2024-brand-finance-found.html"><img src="/images/newpic05.png" alt="두번째 뉴스"></a>
+                <div class="carousel-caption">
+                </div>
+              </div>
+          
+              <div class="item">
+                <a href="https://biz.heraldcorp.com/article/10404572?ref=naver"><img src="/images/newpic06.png" alt="세번째 뉴스"></a>
+                <div class="carousel-caption">
+                </div>
+              </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#newsCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">P</span>
+            </a>
+            <a class="right carousel-control" href="#newsCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">N</span>
+            </a>
+          </div>
+        </p>
+        <p id="conbox3">
+          <em>Other businesses</em>
+          <a href="#"><img src="images/conpic08.png"></a>
+          <a href="#"><img src="images/conpic09.png"></a>
+        </p>
+      </div>
+     </section>
+</body>
+</html>

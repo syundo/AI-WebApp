@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>background 연습3</title>
+  <style>
+    #container{
+      width:1100px;
+      margin:50px auto;
+    }
+    .box{
+      float:left;
+      border:1px solid #222;
+      width:300px;
+      height:300px;      
+      margin:20px;
+      background:url('images/bg3.jpg') no-repeat left top;
+    }
+    #bg1{ background-size: auto;}
+    #bg2{ background-size: contain;}
+    #bg3{ background-size: cover;}
+    #bg4{ 
+      background-size: cover;
+      background-position: center;
+    }
+   
+  </style>
+</head>
+<body>
+  원본이미지<br>
+  <img src="images/bg3.jpg">
+  <div id="container">
+    <div class="box" id="bg1"></div>
+    <div class="box" id="bg2"></div>
+    <div class="box" id="bg3"></div>
+    <div class="box" id="bg4"></div>
+   
+  </div>
+ </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 연습4</title>
+  <style>
+    h1{
+      background-color: black;
+      color: white;
+      text-align: center;
+      /* 글자를 수직정렬하려면 height와 line-height 값을 동일하게 설정 */
+      height: 200px;
+      line-height: 200px;
+    }
+    h2{
+      text-decoration: overline;
+    }
+    a{
+      text-decoration: none;
+    }
+    .shadow{
+      width: 500px;
+      height: 150px;
+      line-height: 150px;
+      text-align: center;
+      font-size: 5rem;
+      font-weight: bold;
+      background-color: tomato;
+      color: yellowgreen;
+      text-shadow: 0px 0px 10px chocolate;
+    }
+    ul{
+      letter-spacing: 0.3em;
+      list-style: none;
+      padding: 0;
+      overflow: hidden;
+    }
+    li{
+      margin: 10px;
+      float: left;
+    }
+    table, th, td{
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+  <h1>HTML5</h1>
+  <h2>CSS3</h2>
+  <a href="http://www.naver.com">네이버</a>
+  <p class="shadow">JavaScript</p>
+
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+
+  <table>
+    <tr>
+      <th>번호</th>
+      <th>과목명</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>HTML</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>CSS</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>JS</td>
+    </tr>
+  </table>
+</body>
+</html>

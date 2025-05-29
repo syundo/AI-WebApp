@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>레이아웃 연습</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    header{
+      background: black;
+      color: white;
+      height: 200px;
+    }
+    nav{
+      background: gray;
+      height: 50px;
+    }
+    article{
+      background: #ccc;
+      background-clip: padding-box;
+      border: 3px dotted;
+      width: 80%;
+      height: 500px;
+      float: left;
+      position: relative;
+    }
+    article section{
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    aside{
+      background: #eee;
+      width: 20%;                                                
+      height: 500px;
+      float: left;
+    }
+    footer{
+      background: darkgray;
+      width: 100%;
+      height: 100px;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <!-- 머리말 ---------------------------------------------->
+  <header>            
+    <h1>글로벌아이티</h1>    
+  </header>
+  <!-- /머리말 -->
+  
+  <!-- 네비게이션 ------------------------------------------>
+  <nav>
+    시맨틱태그의 뜻 | 사용예 | QA
+  </nav>
+  <!-- /네비게이션 -->
+
+  <article>
+    <section>
+      시맨틱태그는 의미를 전달하는 태그입니다.
+    </section>
+  </article>
+  <aside>
+    광고
+  </aside>
+  
+  <!-- 꼬리말 ---------------------------------------------->
+  <footer>
+    &copy; All rights reserved by 글로벌아이티
+  </footer>
+  
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주문서</title>
+</head>
+<body>
+  <h1>주문서</h1>
+  <form action="order.jsp" method="post">
+    <fieldset>
+      <legend>배송 정보</legend>
+      <ul>
+        <li>
+          <label for="user_name">이름</label>
+          <input type="text" id="user_name">
+        </li>
+        <li>
+          <label for="addr">배송 주소</label>
+          <input type="text" id="addr" required>
+        </li>
+        <li>
+          <label for="mail">이메일</label>
+          <input type="email" id="mail">
+        </li>
+        <li>
+          <label for="phone">연락처</label>
+          <input type="tel" id="phone" placeholder="하이픈 빼고 입력(예: 01012345678)">
+        </li>
+        <li>
+          <textarea name="memo" placeholder="추가 배송 요청사항" cols="50" rows="1"></textarea>
+        </li>
+      </ul>
+    </fieldset>
+    
+    <fieldset>
+      <legend>상품 선택</legend>
+      <p>
+        <b>주문할 상품을 선택해 주세요.</b><br>
+        (총 무게 15㎏ 초과시 분리 배송)
+      </p>
+      <ul>
+        <li>
+          <label><input type="checkbox" name="prod" value="s_3">선물용 3㎏</label>
+          <label><input type="number" name="prod_num" min="0" max="5">개(최대 5개)</label>
+        </li>
+        <li>
+          <label><input type="checkbox" name="prod" value="s_3">선물용 5㎏</label>
+          <label><input type="number" name="prod_num" min="0" max="5">개(최대 3개)</label>
+        </li>
+        <li>
+          <label><input type="checkbox" name="prod" value="f_3">가정용 3㎏</label>
+          <label><input type="number" name="prod_num" min="0" max="5">개</label>
+        </li>
+        <li>
+          <label><input type="checkbox" name="prod" value="f_3">가정용 5㎏</label>
+          <label><input type="number" name="prod_num" min="0" max="5">개</label>
+        </li>
+      </ul>
+      <p><b>포장 선택</b></p>
+      <ul>
+        <li><label><input type="radio" name="gift" value="yes">선물 포장</label></li>
+        <li><label><input type="radio" name="gift" value="no">선물 포장 안 함</label></li>
+      </ul>
+    </fieldset>
+
+    <input type="submit" value="주문">
+  </form>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Background--------------------------------------------- -->
+  <figure class="vid">
+    <video loop autoplay muted>
+      <source src="img/nike.mp4" type="video/mp4">
+    </video>
+  </figure>
+  
+  <!-- Logo--------------------------------------------------- -->
+  <h1><img src="img/logo2.png" alt="NIKE AIR MAX"></h1>
+  
+  <!-- Header------------------------------------------------- -->
+  <!-- header>ul#gnb>li.on>(a>em>i)+ul^li*4>a>em^ul -->
+  <header>
+    <ul id="gnb">
+      <li class="on">
+        <a href="#"><em><i class="fa fa-refresh fa-spin"></i>About Nike</em></a>
+        <ul>
+					<li><a href="#"><em><b>English</b></em></a></li>				
+				</ul>
+      </li>
+      <li>
+        <a href="#"><em>Brand Info</em></a>
+        <!-- ul>li*4>a>em{sub} -->
+        <ul>
+          <li><a href="#"><em>sub</em></a></li>
+          <li><a href="#"><em>sub</em></a></li>
+          <li><a href="#"><em>sub</em></a></li>
+          <li><a href="#"><em>sub</em></a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#"><em>Community</em></a>
+        <ul>
+          <li><a href="#"><em>sub</em></a></li>
+          <li><a href="#"><em>sub</em></a></li>
+          <li><a href="#"><em>sub</em></a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#"><em>Product Value</em></a>
+        <ul>
+          <li><a href="#"><em>sub</em></a></li>
+          <li><a href="#"><em>sub</em></a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#"><em>Company History</em></a>
+        <ul>
+          <li><a href=""><em>sub</em></a></li>
+        </ul>
+      </li>
+    </ul>
+  </header>
+
+  <!-- SNS---------------------------------------------------- -->
+  <!-- ul#sns>li*3>a>i -->
+  <ul id="sns">
+    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+  </ul>
+
+  <!-- Text Box----------------------------------------------- -->
+  <!-- section.txtBox>p.txt{Best Qualified}>b{AIR MAX}^p.tit{50}>em{/ 24} -->
+  <section class="txtBox">
+    <p class="txt">Best Qualified<b>AIR MAX</b></p>
+    <p class="tit">50<em>/ 24</em></p>
+  </section>
+
+  <!-- Contents----------------------------------------------- -->
+  <!-- section#side>div.contents>p*3>em+a>img -->
+  <section id="side">
+		<div class="contents">
+			<p>
+				<em>Event & Community</em>
+				<a href="#"><img src="img/pic1.png" /></a>				
+			</p>
+			<p>
+				<em>News & Notice</em>
+				<a href="#"><img src="img/pic2.png" /></a>				
+			</p>
+			<p>
+				<em>Product Review</em>
+				<a href="#"><img src="img/pic3.png" /></a>				
+			</p>		
+		</div>	
+    <!-- Auto Rolling------------------------------------------- -->
+    <!-- div.btnContents>i.fa-angle-double-left*3 -->
+		<div class="btnContents">
+			<i class="fa fa-angle-double-left"></i>
+			<i class="fa fa-angle-double-left"></i>  
+			<i class="fa fa-angle-double-left"></i>
+		</div>
+	</section>
+</body>
+</html>

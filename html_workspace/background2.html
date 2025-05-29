@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background 연습2</title>
+  <style>
+    body{
+      background-image: url("images/sea.jpg");
+      background-attachment: fixed;
+      /* background-size: contain; */
+      /* → 사진의 원본 비율 유지를 위해 공백이 생김 */
+      background-size: cover;
+      /* → 사진의 원본 비율 유지를 위해 사진을 확대하여 일부부만 보여줌 */
+      background-position: right;
+      color: gold;
+    }
+    #content{
+      height: 1500px;
+    }
+  </style>
+</head>
+<body>
+  <h1>방학 여행계획</h1>
+  <div id="content">
+    여름방학 여행계획...
+  </div>
+</body>
+</html>

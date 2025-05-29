@@ -1,0 +1,52 @@
+body {
+  color: #f5f6f7;
+  font: 1rem Verdana, sans-serif;
+  line-height: 1.8;
+}
+h1 {font-size: 3.5rem;}
+h2 {font-size: 2.5rem;}
+h3 {font-size: 2rem;}
+h4 {font-size: 1.6rem;}
+p {font-size: 1.3rem;}
+.margin{margin-bottom: 4.5rem;}
+.navbar {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.5rem;
+}
+.navbar-nav li a:hover {
+  color: olive !important;
+  font-weight: bold;
+}
+.container-fluid {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.contents {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+#contact a {
+  font-size: 1.5rem;
+  color: honeydew;
+}
+.bg-1 {
+  background: honeydew;
+  color: olive;
+}
+.bg-2 {
+  background-color: #ffffff; /* White */
+  color: #555555;
+}
+.bg-3 {
+  background-color: olivedrab;
+  color: #ffffff;
+}
+.bg-4 {
+  background-color: darkolivegreen;
+  color: #ffffff;
+}
