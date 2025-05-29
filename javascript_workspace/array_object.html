@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체 배열 연습</title>
+  <script>
+    let student1={
+      name:"홍길동",
+      department:"컴퓨터공학과",
+      show:function() {
+        return this.name+":"+this.department;
+      }
+    };
+    document.write(student1.show()+"<br>");
+    
+    let student2={
+      name:"이순신",
+      department:["컴퓨터공학과","철학과"],
+      show:function() {
+        return this.name+":"+this.department;
+      }
+    };
+    document.write(student2.show()+"<br>");
+    document.write(student2.department[0]+"<br>");
+    document.write(student2.department[1]+"<br>");
+    
+    // student 목록 배열
+    let students=[student1,student2];
+    document.write(students[0].name+"<br>");
+    document.write(students[1].name+"<br>");
+    document.write(students[1].department[0]+"<br>");
+    document.write(students[1].department[1]+"<br>");
+    document.write("<hr>");
+    /*-----------------------------------------------------------------------------------------*/
+    let ourStudents=[
+      {name:"왕건",department:"수학과"},
+      {name:"이율곡",department:["철학과","국문학과"]}
+    ];
+    document.write(ourStudents[0].name+"<br>");
+    document.write(ourStudents[1].name+"<br>");
+    document.write(ourStudents[1].department+"<br>");
+    document.write(ourStudents[1].department[0]+"<br>");
+    document.write(ourStudents[1].department[1]+"<br>");
+
+    // push
+    let food=["짜장면","피자","치킨"];
+    console.log(food);
+    // const newlength=food.push("햄버거");
+    // console.log(`새로운 배열의 길이: ${newlength}`);
+    const newlength=food.push("햄버거","족발");
+    console.log(`새로운 배열의 길이: ${newlength}`);
+    console.log(food);
+    // pop
+    const removedItem=food.pop(); // 마지막 요소 추출. 추출된 요소는 삭제됨
+    console.log(removedItem);
+    console.log(food);
+    // shift
+    const removedItem2=food.shift(); // 첫번째 요소 추출. 추출된 요소는 삭제됨. 나머지 요소들 index 재조정됨
+    console.log(removedItem2);
+    console.log(food);
+    // unshift
+    const newlength2=food.unshift("떡볶이"); // 첫번재 요소에 삽입. 나머지 요소들 index 하나씩 뒤로 밀림
+    console.log(`새로운 배열의 길이: ${newlength2}`);
+    console.log(food);
+    // slice
+    const arr=[1,2,3,4,5];
+    const sliced=arr.slice(0,2); // index 0 ~ 1까지 구해옴
+    console.log(arr); // 원본은 변화 없음
+    console.log(sliced);
+    const sliced2=arr.slice(2); // index 2 ~ 끝까지 구해옴
+    console.log(sliced2);
+    // slice()에서 index가 음수인 경우 -1은 마지막 요소
+    console.log(arr.slice(-1));
+    console.log(arr.slice(-2));
+    console.log(arr.slice(-3));
+
+    // concat
+    let arrA=[1,2];
+    let arrB=[3,4];
+    let arrC=arrA.concat(arrB); // 배열을 연결해서 새로운 배열 생성
+    console.log(arrC);
+    console.log(arrA); // 원본은 변화 없음
+
+    let arrB2={a:1,b:2};
+    let arrC2=arrA.concat(arrB2); // 배열의 마지막 요소에 객체가 추가됨
+    console.log(arrC2);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

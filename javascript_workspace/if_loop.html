@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기타 제어문 연습</title>
+  <script>
+    for(let a=1; a<10; a++) {
+      if(a%2 == 0) { // a가 짝수이면
+        continue; // continue 다음 부분 skip.
+      }
+      console.log(a); // 홀수만 출력됨.
+    }
+    for(let a=1; a<10; a++) {
+      if(a%2 == 0) { // a가 짝수이면
+        break; // for문 전체가 중지됨.
+      }
+      console.log(a);
+    }
+    
+    // 이중 for문을 사용한 구구단
+    for (var dan = 2; dan <= 9; dan++) {
+      for (var n = 1; n <= 9; n++) {
+        document.write(dan + " * " + n + " = " + (dan*n) + "<br>");
+      }
+      document.write("<hr>");
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

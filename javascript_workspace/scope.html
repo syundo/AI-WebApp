@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scope</title>
+  <script>
+    function f1() {
+      var num=10; // 지역변수
+    }
+    f1();
+    // document.write(num+"<br>"); // 함수의 지역변수 num 사용 불가
+
+    var num2; // 전역변수
+    function f2() {
+      num2=20; // 전역변수 사용가능
+    }
+    f2();
+    document.write(num2+"<br>"); // 전역변수 사용가능
+    
+    function f3() {
+      num2=50; // 전역변수 사용가능
+    }
+    f3();
+    document.write(num2+"<br>"); // 전역변수 사용가능
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

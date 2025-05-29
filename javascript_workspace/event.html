@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event</title>
+</head>
+<body>
+  <button id="btn1" onclick="f1()">버튼1</button>
+  <button id="btn2">버튼2</button>
+  <button id="btn3">버튼3</button>
+
+  <script>
+    function f1(){
+      console.log("btn1");
+    }
+
+    let btn2=document.getElementById("btn2");
+    btn2.onclick=function(){
+      console.log("btn2");
+    };
+    // let btn2=document.getElementById("btn2");
+    // btn2.onclick=()=>{
+    //   console.log("btn2");
+    // };
+
+    let btn3=document.getElementById("btn3");
+    btn3.addEventListener("click",function(){
+      console.log("btn3");
+    });
+    // let btn3=document.getElementById("btn3");
+    // btn3.addEventListener("click",()=>{
+    //   console.log("btn3");
+    // });
+
+  </script>
+</body>
+</html>

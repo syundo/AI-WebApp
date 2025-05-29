@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>addList 예제</title>
+  <style>
+    .disabled {
+      border: 1px solid #ccc;
+      background-color: #f0f0f0;
+      color: #ccc;
+    }
+    .enabled {
+      border: 1px solid #00bbff;
+      background-color: #007bff;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <label>
+      <input type="checkbox" id="agree">필수 항목 동의
+    </label>
+  </div>
+  <div>
+    <button id="proceed" disabled>다음으로 진행</button>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded',function(){
+      const checkbox=document.querySelector("#agree"); // checkbox 찾기
+      const proceedButton=document.querySelector("#proceed"); // button 찾기
+      checkbox.addEventListener("change",function(){
+        // if(this.checked) {
+        //   proceedButton.classList.remove("disabled");
+        //   proceedButton.classList.add("enabled");
+        //   proceedButton.disabled = false;
+        // }
+        // else {
+        //   proceedButton.classList.remove("enabled");
+        //   proceedButton.classList.add("disabled");
+        //   proceedButton.disabled = true;
+        // }
+
+        proceedButton.classList.toggle('enabled',this.checked);
+        proceedButton.classList.toggle('disabled',this.checked);
+        proceedButton.disabled= !this.checked; // 버튼의 활성화/비활성화 상태
+      });
+    });
+  </script>
+</body>
+</html>

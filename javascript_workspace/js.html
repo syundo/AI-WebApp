@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 연습</title>
+  <script>
+    let now = new Date(); // now는 레퍼런스 변수
+    document.write(now);
+    document.write("<br>");
+    document.write(`현재 시각은 ${now.toLocaleString()}`);
+    document.write("<br>");
+    document.write("현재 시각은 "+now.toLocaleString());
+    document.write("<h1>JavaScript</h1>");
+    
+    now = 100; // now의 값을 100으로 변경
+    document.write(now);
+    document.write("<br>");
+    
+    const b = 10; // b는 상수
+    document.write(b);
+    document.write("<br>");
+    // b=20; // 상수의 값은 변경 불가
+    // document.write(b);
+    document.write("<br>");
+
+    let c = new Array(4);
+    c[0] = 10;
+    c[1] = 20;
+    c[2] = 30;
+    c[3] = 40;
+    document.write(c[0]+"<br>");
+    document.write(c[1]+"<br>");
+    document.write(c[2]+"<br>");
+    document.write(c[3]+"<br>");
+    document.write("<br>");
+
+    let d = [100,200,300,400];
+    document.write(d[0]+"<br>");
+    document.write(d[1]+"<br>");
+    document.write(d[2]+"<br>");
+    document.write(d[3]+"<br>");
+    
+    let name = "홍길동";
+    let address = "서울";
+    document.write("이름: "+name+", 주소: "+address+"<br>");
+
+    let age; // undefined
+    document.write(age+"<br>");
+    age = 10; // 정수
+    document.write(age+"<br>");
+    age = "십대"; // 문자열
+    document.write(age+"<br>");
+    document.write(`<hr>`);
+
+    let nums = [1,2,3];
+    let chars = ['a','b','c','d'];
+
+    let numsChars = nums.concat(chars);
+    let charsNums = chars.concat(nums);
+    document.write(`nums에 chars를 합치면 ${numsChars}<br>`);
+    document.write(`chars에 nums를 합치면 ${charsNums}<br>`);
+    document.write(`<hr>`);
+    
+    let string1 = nums.join();
+    document.write(`구분자 없는 경우: ${string1}<br>`);
+    let string2 = nums.join('/');
+    document.write(`/ 구분자 지정한 경우: ${string2}<br>`);
+    document.write(`<hr>`);
+    
+    let ret1 = nums.push(4,5);
+    document.write(`length: ${ret1} | 배열: ${nums}<br>`);
+    let ret2 = nums.unshift(0);
+    document.write(`length: ${ret2} | 배열: ${nums}<br>`);
+    let popped1 = chars.pop();
+    document.write(`꺼낸요소: ${popped1} | 배열: ${chars}<br>`);
+    let popped2 = chars.shift();
+    document.write(`꺼낸요소: ${popped2} | 배열: ${chars}<br>`);
+    document.write(`<hr>`);
+    
+    let study = ['html','css','javascript','jquery','react','nodejs'];
+    document.write(`study: ${study}<hr>`);
+    let js = study.splice(2);
+    document.write(`study: ${study}<br>`); // 원본 변경
+    document.write(`js: ${js}<hr>`);
+    let jquery = js.splice(1,1);
+    document.write(`js: ${js}<br>`); // 원본 변경
+    document.write(`jquery: ${jquery}<hr>`);
+    let modernJs = js.splice(1,0,'typescript');
+    document.write(`js: ${js}<br>`); // 원본 변경
+    document.write(`modernJs: ${modernJs}<hr>`);
+    
+    let colors = ["red","green","blue","white","black"];
+    document.write(`colors: ${colors}<br>`);
+    let ret3 = colors.slice(2);
+    document.write(`ret3: ${ret3}<br>`);
+    document.write(colors.slice(2)+"<hr>");
+
+    let now2 = new Date();
+    document.write("year: "+now2.getFullYear()+"<br>");
+    document.write("month: "+(now2.getMonth()+1)+"<br>");
+    document.write("date: "+now2.getDate()+"<br>");
+    document.write("day: "+now2.getDay()+"<br>");
+    document.write("hour: "+now2.getHours()+"<br>");
+    document.write("minute: "+now2.getMinutes()+"<br>");
+    document.write("second: "+now2.getSeconds()+"<br>");
+    document.write("millisecond: "+now2.getMilliseconds()+"<hr>");
+
+  </script>
+</head>
+<body>
+  <a href="js02.html">js02.html</a>
+</body>
+</html>

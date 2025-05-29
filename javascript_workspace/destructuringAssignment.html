@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 배열 구조분해할당
+    let arr=[1,2,3];
+    let [one,two,three]=arr; // arr 배열을 구조분해해서 item을 변수에 저장
+    console.log(one,two,three); // 1 2 3
+
+    // 객체 구조분해할당
+    let person={
+      name:"아무개",
+      age:25,
+      local:"경기도"
+    };
+    let {name,age,local}=person; // person 객체를 구조분해해서 속성값을 변수에 저장
+    console.log(name,age,local); // 아무개 25 경기도
+  </script>
+</head>
+<body>
+  <h1>구조분해할당</h1>
+</body>
+</html>

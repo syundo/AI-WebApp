@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 비동기(Asynchronous). 순서대로 하지 않음.
+
+    // setTimeout(callback, delay). 시간을 예약해서 예약된 시간이 지난 후 처리
+    // setTimeout(() => {
+    //   console.log("1번");
+    // }, 1000); // 1초 후에 실행
+    // console.log("2번");
+
+    // setTimeout()에서 리턴한 값 받아서 처리하기. 문제 발생
+    // function double(num) {
+    //   return setTimeout(() => {
+    //     const doubleNum = num * 2;
+    //     return doubleNum;
+    //   }, 1000);
+    // }
+    // const res=double(10);
+    // console.log(res);
+
+    // callback을 사용해서 해결
+    function double(num, cb) {
+      setTimeout(() => {
+        const doubleNum = num * 2;
+        cb(doubleNum);
+      }, 1000);
+    }
+    double(10, (res) => {
+      console.log(res);
+    });
+    console.log("마지막");
+
+    // promise를 이용한 비동기 처리
+    // resolve: 성공했을 때 호출하는 callback
+    // reject: 실패했을 때 호출하는 callback
+    // fetch() 함수는 promise 객체를 리턴
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        // reject("실패");
+        resolve("성공");
+      }, 1000);
+    });
+    // then은 성공했을 때
+    promise.then(function (res) {
+      console.log("성공했을 때 처리할 일....")
+      console.log(res);
+    });
+    // catch는 실패했을 때 
+    promise.catch(function (err) { 
+      console.log("실패했을 때 처리할 일....")
+      console.log(err);
+    });
+  </script>
+</head>
+<body>
+  <h1>Asynchronous</h1>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // and 단락평가
+    function calcA() {
+      console.log("a");
+      return false;
+    }
+    function calcB() {
+      console.log("b");
+      return true;
+    }
+    console.log(calcA() && calcB()); // && 연산자 앞부분이 false이므로 뒷부분은 실행되지 않음
+
+    // and 단락평가 응용
+    function getName(person) {
+      return person && person.name; // person 값이 없으면 person을 리턴. 있으면 person.name을 리턴
+    }
+    let person={name:"홍길동"};
+    let name1=getName(undefined);
+    let name2=getName(null);
+    let name3=getName(person);
+    console.log(name1);
+    console.log(name2);
+    console.log(name3);
+
+    // || vs ??
+    const varA=0;
+    // const varA=null;
+    // const varA=undefined;
+    const varB="홍길동";
+    const resultA=varA || varB; // 0/null/undefined은 모두 falsy이므로 varB가 리턴됨
+    const resultB=varA ?? varB; // 0은 falsy이지만 ?? 연산자는 null, undefined만 체크하므로 varA가 리턴됨
+    console.log(resultA); // 홍길동
+    console.log(resultB); // varA의 값이 0이면 0, varA의 값이 null이나 undefined면 홍길동
+  </script>
+</head>
+<body>
+  <h1>단락 평가</h1>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM 연습</title>
+</head>
+<body>
+  <!-- 요소(태그, 선택자 등)에 접근 -->
+  <h1>JavaScript</h1>
+  <h1>DOM</h1>
+  <h2>JavaScript</h2>
+
+  <div class="title">JavaScript</div>
+  <!-- <div class="title">CSS</div> -->
+  <div id="subject">DOM 연습</div>
+
+  <div class="content">
+    <div>
+      <div>자바스크립트</div>
+      <div>자바스크립트</div>
+    </div>
+  </div>
+
+  <script>
+    console.log(document.getElementsByTagName("h1"));
+    console.log(document.getElementsByTagName("h1")[0].innerText);
+    console.log(document.getElementsByTagName("h1")[1].innerText);
+    console.log(document.getElementsByTagName("h1").length);
+    for(let h1 of document.getElementsByTagName("h1")) {
+      console.log(h1.innerText);
+    }
+
+    console.log(document.getElementsByClassName("title"));
+    console.log(document.getElementById("subject"));
+
+    console.log(document.querySelector(".content>div>div"));
+    console.log(document.querySelectorAll(".content>div>div"));
+  </script>
+
+  <!-- 웹 요소 내용에 접근 -->
+  <div id="detail">
+    <ul>
+      <li>원산지: 에디오피아</li>
+      <li style="display: none;">지  역: 아르가체프 코체레</li>
+      <li style="display: none;">농  장: 게뎁</li>
+    </ul>
+  </div>
+
+  <script>
+    let detail=document.querySelector("#detail>ul");
+    console.log(detail.innerText); // 보이는 텍스트만
+    console.log(detail.innerHTML); // 자식태그 포함
+    console.log(detail.textContent); // 보이지 않는 텍스트 포함. 모든 텍스트
+  </script>
+</body>
+</html>

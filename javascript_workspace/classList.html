@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>classList 연습</title>
+  <style>
+    .color1 {color: tomato;}
+  </style>
+</head>
+<body>
+  <h1>JavaScript</h1>
+  <button id="btn1">color change</button>
+  <button id="btn2">color reset</button>
+  <button id="btn3">toggle</button>
+
+  <script>
+    document.getElementById("btn1").addEventListener("click",function(){
+      document.getElementsByTagName("h1")[0].classList.add("color1");
+      // document.getElementsByTagName("h1")[0].style.color="red"; // 이렇게 코딩도 가능은 하나 css와 js 구분이 안됨
+    });
+    document.getElementById("btn2").addEventListener("click",function(){
+      document.getElementsByTagName("h1")[0].classList.remove("color1");
+    });
+    document.getElementById("btn3").addEventListener("click",function(){
+      document.getElementsByTagName("h1")[0].classList.toggle("color1");
+    });
+  </script>
+</body>
+</html>

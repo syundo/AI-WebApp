@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM 연습2</title>
+</head>
+<body>
+  <div class="container">
+    <h1 id="heading">에디오피아 게뎁</h1>
+    <img src="img/coffee-pink.jpg" alt="커피잔" id="cup" width="200" height="200">
+  </div>
+  <script>
+    let heading=document.querySelector("#heading");
+    let cup=document.querySelector("#cup");
+    heading.onclick=() => heading.innerText="추천! 오늘의 커피";
+    cup.onclick=() => cup.src="img/coffee-blue.jpg";
+  </script>
+
+  <div class="container" style="border: 1px solid black; width: 500px; height: 300px;"></div>
+  <script>
+    let container=document.querySelectorAll(".container");
+    container[1].onclick = (event)=>{
+      console.log(`이벤트 발생위치: ${event.pageX}, ${event.pageY}`);
+    }
+  </script>
+
+  <div class="contianer">
+    <img src="img/kitty-1.png" alt="kitty" id="kitty">
+  </div>
+  <script>
+    let kitty=document.querySelector("#kitty");
+    kitty.addEventListener("mouseover", ()=>{
+      kitty.src="img/kitty-2.png";
+    });
+    kitty.addEventListener("mouseout", ()=>{
+      kitty.src="img/kitty-1.png";
+    });
+  </script>
+
+  <div class="container">
+    <p>도형 위로 마우스 포인터를 올려놓으세요.</p>
+    <div id="rect" style="background: red; width: 500px; height: 500px;"></div>
+  </div>
+  <script>
+    let rect = document.querySelector("#rect");
+    rect.addEventListener("mouseover", ()=>{
+      rect.style.backgroundColor="green";
+      rect.style.borderRadius="50%";
+    });
+    rect.addEventListener("mouseout", ()=>{
+      rect.style.backgroundColor="red";
+      rect.style.borderRadius="25%";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체 연습</title>
+  <script>
+    let person={
+      name:"홍길동",
+      birthday:"040321",
+      pId:"1234567",
+      fullId:function() {
+        return this.birthday+this.pId;
+      }
+    };
+    document.write(person.name+"<br>");
+    document.write(person.fullId()+"<br>");
+
+    let person2={name:"이순신", birthday:"010101", pId:"2222222", fullId:() => { return "0101012222222"; } };
+    document.write(person2.name+"<br>");
+    document.write(person2.fullId()+"<br>");
+
+    let person3={
+      name:"이정환",
+      age:25,
+      "like cat":true
+    };
+    // 속성 추가 가능
+    person3.gender="male";
+    person3["nickname"]="winterlood";
+    console.log(person3.gender);
+    console.log(person3["nickname"]);
+    // 속성 삭제
+    let cat={
+      name:"야옹이",
+      age:4
+    }
+    delete cat.name;
+    // delete cat["age"];
+    console.log(cat);
+
+    let person4={
+      age:10
+    }
+    console.log(person4.b); // undefined. 속성 b는 존재하지 않음.
+    let isNameExist="name" in person4; // name 속성이 person4에 존재하면 true
+    console.log(isNameExist); // false
+
+    let person5={
+      name:"아무개"
+    }
+    let man={
+      name:"아무개"
+    }
+    console.log(person===man); // false. === 연산자는 값과 타입이 모두 같아야 true.
+    console.log(person==man); // false. == 연산자는 값만 같아도 true.
+    // ↑person5와 man에 들어있는 참조값이 서로 다르기 때문에 false.
+
+    let person6={
+      name:"아무개",
+      age:25,
+      location:"경기도"
+    }
+    for(let key of Object.keys(person6)) {
+      console.log(key, person6[key]);
+    }
+    for(let key in person6) {
+      console.log(key, person6[key]);
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

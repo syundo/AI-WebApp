@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+</head>
+<body>
+  <div class="container">
+    <h1>To Do List</h1>
+    <p>해야 할 일을 기록해 보세요.</p>
+    <form action="todolist.jsp">
+      <label for="todo"></label>
+      <input id="todo" type="text" autofocus>
+      <button>추가</button>
+    </form>
+    <hr>
+    <ul id="todolist"></ul>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded",function(){
+      const button=document.querySelector("button");
+      // 버튼을 클릭하면 추가
+      button.addEventListener("click",function(event){
+        event.preventDefault(); //기본동작방지. 여기서는 전송방지
+        newRegister();
+      });
+
+      // 항목(li태그)을 클릭하면 삭제
+      const todolist=document.querySelector("#todolist"); // ul태그 찾기
+      todolist.addEventListener("click",(event)=>{
+        if(event.target.tagName==="LI"){
+          if(confirm("삭제하시겠습니까?")){
+            event.target.remove(); // li태그 삭제
+          }
+        }
+      });
+    });
+
+    function newRegister(){
+      const newList=document.createElement("li"); // li태그 생성
+      const todo=document.querySelector("#todo"); //input태그 찾기
+      const newText=document.createTextNode(todo.value); //input태그에 입력한 값으로 텍스트 생성
+      newList.appendChild(newText); // li태그에 텍스트 넣기
+      
+      const todolist=document.querySelector("#todolist"); // ul태그 찾기
+      todolist.appendChild(newList); // ul태그에 li태그 추가하기
+
+      todo.value=""; // input태그 초기화
+    }
+  </script>
+</body>
+</html>

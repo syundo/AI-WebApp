@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>즉시실행함수</title>
+  <script>
+    // 즉시 실행 함수 (IIFE: Immediately Invoked Function Expression)
+    // 익명 함수를 이용해서 정의와 동시에 실행되는 함수
+    // 함수의 이름이 없으므로 배포시 함수 이름이 같아서 충돌할 위험이 없음
+    // 단, 즉시 실행 함수는 재사용이 불가능
+    // 주로 전역 변수를 오염시키지 않기 위해 사용
+    (function() {
+      console.log("즉시 실행 함수입니다.");
+    })();
+    let result=(function() {
+      return "리턴값";
+    })();
+    console.log(result); // 리턴값
+
+    let result2=(function() {
+      return {name:"이순신", age:45};
+    })();
+    console.log(result2);
+    console.log(result2.name); // 이순신
+    console.log(result2.age); // 45
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 연습2</title>
+  <script>
+    console.log(Math.floor(Math.random()*10)+1); // 1-10 사이의 난수 구하기
+    console.log(Math.floor(Math.random()*6)+1); // 1-6 사이의 난수 구하기(주사위)
+    console.log(Math.floor(Math.random()*45)+1); // 1-45 사이의 난수 구하기(로또?)
+
+    // 현재는 브라우저에서 팝업을 허용해야 볼 수 있음
+    // 팝업보다는 모달을 사용하는 추세
+    let leftValue=(screen.availWidth-500)/2;
+    let topValue=(screen.availHeight-400)/2;
+    let newwin = window.open("notice.html","js","width=500,height=400,left="+leftValue+",top="+topValue);
+    if (newwin == null) {
+      alert("팝업이 차단되어 있습니다. 팝업 차단을 해제 후 새로고침해 주세요.")
+    }
+  </script>
+</head>
+<body>
+  <button onclick="javascript: history.back();">back</button>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수 연습</title>
+  <script>
+    function addNum(x,y) {
+      return x+y;
+    }
+    document.write(addNum(2,3)+"<br>");
+    document.write(addNum(5,7)+"<br>");
+    document.write(addNum(9,4)+"<br>");
+
+    function sqr(x) {
+      return x*x;
+    }
+    var sqrNum=sqr;
+    document.write(sqr(4)+"<br>");
+    document.write(sqrNum(4)+"<br>");
+
+    /* 함수의 여러 형태 */
+    // parameter, return 값 없음
+    function f1() {
+      document.write("f1<br>");
+    }
+    f1();
+    // parameter 있음. return 값 없음
+    function f2(x) {
+      document.write(x+"<br>");
+    }
+    f2(10);
+    // parameter 없음. return 값 있음
+    function f3() {
+      return 100000;
+    }
+    // var returnValue=f3();
+    // document.write(returnValue+"<br>");
+    document.write(f3()+"<br>");
+    // parameter, return 값 모두 있음
+    function f4(x) {
+      return x*10;
+    }
+    document.write(f4(45)+"<br>");
+    document.write(f4(29)+"<br>");
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

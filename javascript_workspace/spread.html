@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    let arrA=[1,2,3];
+    let arrB=[...arrA,4,5,6]; // arrA의 요소를 전개해서 삽입
+    console.log(arrB); // [1,2,3,4,5,6]
+
+    // 객체 전개
+    let objA={
+      a:1,
+      b:2
+    };
+    let objB={
+      ...objA, // objA의 속성을 전개해서 삽입
+      c:3,
+      d:4
+    };
+    console.log(objB); // {a:1, b:2, c:3, d:4}
+
+    // 함수 호출 시 스프레드 연산자 사용
+    function func(a,b,c) {
+      console.log(a,b,c);
+    }
+    let arr=[1,2,3];
+    func(...arr); // arr 배열의 요소가 전개되서 parameter로 전달됨
+
+    // rest 매개변수. 가변길이 매개변수
+    function func2(...rest) {
+      console.log(rest);
+    }
+
+    func2(1,2,3,4,5,6,7); // parameter의 개수가 정해져있지 않음
+    function func3(param,...rest) {
+      console.log(param);
+      console.log(rest);
+    }
+    func3(1,2,3,4);
+  </script>
+</head>
+<body>
+  <h1>Spread Operator</h1>
+</html>
