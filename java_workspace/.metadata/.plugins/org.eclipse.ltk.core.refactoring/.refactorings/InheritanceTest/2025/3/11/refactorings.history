@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;UpcastingTest.java&apos; to &apos;InterfaceTest/src/(default package)&apos;&#x0D;&#x0A;- Original project: &apos;InheritanceTest&apos;&#x0D;&#x0A;- Destination element: &apos;InterfaceTest/src/(default package)&apos;&#x0D;&#x0A;- Original element: &apos;com.toss.java.UpcastingTest.java&apos;" description="Copy compilation unit" destination="=InterfaceTest/src&lt;" element1="/src&lt;com.toss.java{UpcastingTest.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1741846286000" units="1" version="1.0"/>
+</session>

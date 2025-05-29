@@ -1,0 +1,8 @@
+package com.naver.service;
+
+public class Student extends Person {
+	public String department;
+	void study() {
+		System.out.println("공부를 합니다.");
+	}
+}
