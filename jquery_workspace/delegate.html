@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event 위임</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("button").click(function() {
+        $("ul").append('<li><a href="#">html</a></li>');
+      });
+
+      // event delegate
+      $("ul").on("click","li",function() {
+        console.log("event 처리 완료")
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>이벤트 위임</h1>
+  <button>추가</button>
+  <ul></ul>
+</body>
+</html>

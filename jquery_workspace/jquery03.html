@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery03</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#btn1").click(function() {
+        $("div").animate({
+          left: "250px", 
+          opacity:"0.5", 
+          height: "150px", 
+          width: "150px"});
+      });
+
+      $("#btn2").click(function() {
+        $("div").animate({
+          left: "250px", 
+          height: "+=150px", 
+          width: "+=150px"
+        });
+      });
+
+      $("#btn3").click(function() {
+        var div=$("div");
+        // div.animate({height: '300px', opacity: '0.4'}, "slow");
+        // div.animate({width: '300px', opacity: '0.8'}, "slow");
+        // div.animate({height: '100px', opacity: '0.4'}, "slow");
+        // div.animate({width: '100px', opacity: '0.8'}, "slow");
+        // chaining 방식
+        div.animate({height: "300px", opacity: "0.4"}, "slow")
+           .animate({width: "300px", opacity: "0.8"}, "slow")
+           .animate({height: "100px", opacity: "0.4"}, "slow")
+           .animate({width: "100px", opacity: "0.8"}, "slow", function() {
+            console.log("call back에 의해서 애니메이션 종료 후 작업");
+           });
+
+        // console.log("애니메이션 종료 후 작업"); // 애니메이션이 모두 종료되기 전에 실행됨
+      });
+    
+      $("#btn4").click(function() {
+        $("div").animate({left: "250px"},2000)
+                .animate({top: "250px"},2000)
+                .animate({left: "0"},1000)
+                .animate({top: "100px"},1000);
+      });
+
+      $("#stop").click(function() {
+        // $(selector).stop(stopAll,goToEnd);
+        // $("div").stop(); // 기본값: false, false
+        // $("div").stop(false, false); // 현재 애니메이션 종료. 마지막 장면으로 이동 X(현재 장면(위치)에서 다음 애니메이션 실행)
+        // $("div").stop(false, true); // 현재 애니메이션 종료. 마지막 장면으로 이동 O(현재 애니메이션의 마지막 장면(위치)으로 이동 후 다음 애니메이션 실행)
+        // $("div").stop(true, false); // 모든 애니메이션 종료. 마지막 장면으로 이동 X(stop 장면(위치)에서 정지)
+        // $("div").stop(true, true); // 모든 애니메이션 종료. 마지막 장면으로 이동 O(마지막 장면(위치)에서 정지)
+      });
+    });
+  </script>
+</head>
+<body>
+  <div>
+    <!-- button#btn${animation$} -->
+    <button id="btn1">animation1</button>
+    <button id="btn2">animation2</button>
+    <button id="btn3">animation3</button>
+    <button id="btn4">animation4</button>
+    <button id="stop">stop</button>
+  </div>
+  <div style="background: #98bf21; height: 100px; width: 100px; position: absolute;"></div>
+</body>
+</html>

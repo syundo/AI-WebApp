@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>slider03</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style>
+  #slider {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 4px; 
+    background-color: #dddddd;
+  }
+  #slider ul {
+    position: relative;
+    margin: 0;
+    padding: 0;   
+    list-style: none;
+  }
+  #slider ul li {
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 500px;
+    height: 300px;     
+    text-align: center;
+    line-height: 300px;
+  }
+  #slider ul li img{
+    width: 500px;
+    height: 300px;     
+  }
+  a.control_prev, a.control_next {
+    position: absolute;
+    top: 40%;
+    z-index: 999;
+    padding: 15px 10px;
+    width: auto;
+    height: auto;
+    color: #eeeeee;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  a.control_prev:hover, a.control_next:hover {
+    background: #2a2a2a;
+    opacity: 1;
+    transition: all 0.2s ease;
+  }
+  a.control_prev {
+    border-radius: 0 2px 2px 0;
+  }
+  a.control_next {
+    right: 0;
+    border-radius: 2px 0 0 2px;
+  }
+  .dot {
+    cursor:pointer;
+    height: 7px;
+    width: 7px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  .dot:hover {
+    background-color: #717171;
+  } 
+  .active{
+    background-color: #222222;
+  }
+  #auto{
+    color:#bbb;
+    width:15px;
+    height: 15px;
+    vertical-align:middle;
+    
+  }
+  #auto:hover{
+    color:#717171;
+  }
+  .active2{
+    color: #222222 !important;
+  }
+      
+  .control_panel{
+    width: 100%;
+    position: absolute;
+    bottom:0;
+  }
+  </style>
+  <script>
+  $(document).ready(function ($) {
+      var slideCount = $('#slider ul li').length;
+      var slideWidth = $('#slider ul li').width();//마스크의 크기
+      var slideHeight = $('#slider ul li').height();
+      var sliderUlWidth = slideCount * slideWidth;
+
+      $('#slider').css({ width: slideWidth, height: slideHeight });
+      $('#slider ul').css({ width: sliderUlWidth, marginLeft: - $('#slider ul li').width() });
+      $('#slider ul li:last-child').prependTo('#slider ul');//마지막것(4번)을 앞에 배치
+
+      var index=0;
+      function moveLeft() {
+        $('#slider ul').animate({
+        left: + slideWidth
+        }, 200, function () {
+          $('#slider ul li:last-child').prependTo('#slider ul');
+          $('#slider ul').css('left', '');
+        });
+      };
+
+      function moveRight() {
+        $('#slider ul').animate({
+          left: - slideWidth
+        }, 200, function () {
+          $('#slider ul li:first-child').appendTo('#slider ul');
+          $('#slider ul').css('left', '');
+        });
+      };
+
+      $('a.control_prev').click(function () {
+        stop();
+        index--;
+
+        if(index<0){
+          index=$(".dot").length-1;
+        }
+        // console.log(index);
+
+        moveLeft();
+        $(".dot").removeClass("active");
+        $(".dot").eq(index).addClass("active");
+      });
+
+      $('a.control_next').click(function () {
+        stop();
+        index++;
+
+        if(index>=$(".dot").length){
+          index=0;
+        }
+        // console.log(index);
+
+        moveRight();
+        $(".dot").removeClass("active");
+        $(".dot").eq(index).addClass("active");
+      });
+
+      $('.dot').click(function () {
+        stop();
+        clearInterval(id);
+        var dotIndex=$(this).index()-1;
+
+        if(dotIndex<index){
+          for(i=0;i<index-dotIndex;i++){
+            moveLeft();
+          }
+        }
+
+        else if(dotIndex>index){
+          for(i=0;i<dotIndex-index;i++){ 
+            moveRight();
+          }
+        }
+        
+        index=dotIndex;
+        $(".dot").removeClass("active");
+        $(".dot").eq(index).addClass("active");
+      });
+      
+      var id=0;
+      var chk=0;
+      function auto(){
+        id=setInterval(function () {
+                  index++;
+                  if(index>=$(".dot").length){
+                      index=0;
+                  }
+                  moveRight();
+                  $(".dot").removeClass("active");
+                  $(".dot").eq(index).addClass("active");
+              }, 5000); 
+            $("#auto").addClass("active2");
+            $("#auto").removeClass("fa-play-circle");
+            $("#auto").addClass("fa-pause-circle");
+            chk=1;
+      }
+      function stop(){
+          clearInterval(id);
+          $("#auto").removeClass("active2");
+              
+          $("#auto").removeClass("fa-pause-circle");
+          $("#auto").addClass("fa-play-circle"); 
+          chk=0;
+      }
+      
+      auto();//자동시작
+      
+    $('#auto').click(function(){
+      if(chk==1){
+          stop();
+      }else{
+          auto();
+      }  
+
+    });
+  });    
+  </script>
+</head>
+<body>
+  <div id="slider">
+    <a href="#" class="control_next"><i class="fa fa-chevron-right"></i> </a>
+    <a href="#" class="control_prev"><i class="fa fa-chevron-left"></i> </a>
+    <ul>
+      <li style="background:#aaa;"><img src="img/pic01.jpg"></li>
+      <li style="background:#ccc;"><img src="img/pic02.jpg"></li>
+      <li style="background:#aaa;"><img src="img/pic03.jpg"></li>
+      <li style="background:#ccc;"><img src="img/pic04.jpg"></li>
+      <li style="background:#aaa;"><img src="img/pic05.jpg"></li>
+    </ul>
+    <div class="control_panel" style="text-align:center">
+      <i id="auto" class="fa fa-pause-circle"></i>  
+      <span class="dot active"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</body>
+</html>

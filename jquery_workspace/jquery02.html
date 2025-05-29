@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery02</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#btn1").click(function() {
+        $("#message").show();
+      });
+      $("#btn2").click(function() {
+        $("#message").hide();
+      });
+      $("#btn3").click(function() {
+        $("#message").toggle(2000);
+      });
+      $("#btn4").click(function() {
+        $("#message").fadeIn();
+      });
+      $("#btn5").click(function() {
+        $("#message").fadeOut();
+      });
+      $("#btn6").click(function() {
+        $("#message").fadeToggle();
+      });
+      $("#btn7").click(function() {
+        $("#message").slideUp();
+      });
+      $("#btn8").click(function() {
+        $("#message").slideDown();
+      });
+      $("#btn9").click(function() {
+        $("#message").slideToggle();
+      });
+    });
+  </script>
+</head>
+<body>
+  <!-- button#btn${btn$}*6 -->
+  <button id="btn1">show()</button>
+  <button id="btn2">hide()</button>
+  <button id="btn3">toggle()</button>
+  <button id="btn4">fadeIn()</button>
+  <button id="btn5">fadeOut()</button>
+  <button id="btn6">fadeToggle()</button>
+  <button id="btn7">slideUp()</button>
+  <button id="btn8">slideDown()</button>
+  <button id="btn9">slideToggle()</button>
+  <div id="message">jQuery is easy</div>
+</body>
+</html>

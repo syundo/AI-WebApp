@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScrollAnimation</title>
+  <link rel="stylesheet" href="css/animate.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    div {height: 1000px;}
+  </style>
+  <script>
+    $(document).ready(function() {
+      // $("#box2>h1").addClass("animate__animated").toggleClass("animate__bounce");
+
+      $(window).scroll(function() { // window scroll 이벤트 처리
+        // 스크롤 위치에 따라 애니메이션을 적용하는 방법
+        // if($(window).scrollTop()>500) {
+        //   $("#box2>h1").addClass("animate__animated").toggleClass("animate__fadeInUp");
+        // }
+
+        var scrollPosition = $(window).scrollTop(); // 현재 스크롤 위치
+        var targetOffset = $('#box2>h1').offset().top; // #box2>h1 의 상단 위치
+
+        console.log("widnodw.scrollTop : "+$(window).scrollTop());
+        console.log("widown.height : "+$(window).height());
+        console.log("targetOffset : "+targetOffset);
+        console.log("#box2>h1'.height: "+$('#box2>h1').height());
+
+        // #box2>h1가 화면에 나타날 때 애니메이션 적용
+        if (scrollPosition + $(window).height() > targetOffset+$('#box2>h1').height()) {
+            $('#box2>h1').addClass("animate__animated").addClass("animate__fadeInLeft");
+        } 
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="box1">
+    <h1>ScrollAnimation</h1>
+  </div>
+  <div id="box2">
+    <h1 style="opacity: 0;">jQuery ScrollAnimation with animate.css</h1>
+  </div>
+  <div id="box3">
+    <h1>addClass + animate.css</h1>
+  </div>
+</body>
+</html>

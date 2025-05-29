@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부모/조상 찾기</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <style>
+		.container * { 
+			display: block;
+			border: 1px solid lightgray;
+			padding: 5px;
+			margin: 15px;
+		}
+	</style>
+  <script>
+    $(document).ready(function() {
+      $("#btn1").on("click", function() {
+        // <p>요소의 부모 요소를 선택
+        $("p").parent().css({"border":"2px solid red"});
+			});
+      $("#btn2").on("click", function() {
+        // <p>요소의 조상 요소 중에서 <div>요소를 모두 선택
+        $("p").parents().css({"border":"2px solid blue"});
+			});
+      $("#btn3").on("click", function() {
+				// <p>요소의 조상 요소 중에서 첫 번째 <div>요소의 바로 이전까지의 요소를 모두 선택
+        $("p").parentsUntil("div").css({"border":"2px solid green"});
+			});
+      $("#btn4").on("click", function() {
+				// 요소 자신과 조상 요소 중에서 첫 번째 <p>요소를 선택
+        $(".container p").closest("p").css({"border":"2px solid yellow"});
+			});
+    });
+  </script>
+</head>
+<body>
+	<div class="container">
+		<div>div 요소
+			<ul>ul 요소
+				<li>li 요소</li>
+				<li>li 요소
+					<p>p 요소 (기준)
+						<span>span 요소</span>
+					</p>
+				</li>
+				<li>li 요소</li>
+			</ul>
+		</div>
+	</div>
+  
+  <button id="btn1">p 요소의 부모 요소</button>
+  <button id="btn2">p 요소의 부모 요소 모두</button>
+  <button id="btn3">p 요소의 부모 요소 중 지정한 부모 전까지</button>
+  <button id="btn4">p 요소의 부모 요소 중 가장 가까운 부모(자신 포함)</button>
+</body>
+</html>

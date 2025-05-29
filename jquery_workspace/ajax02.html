@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax02</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $.ajax({
+        url:"list.json", // 서버 주소
+        success: function(data) { // data가 서버에서 날라온 데이터를 가리킴
+          // console.log(data);
+          // $("#list").text(data);
+          
+          let html = "";
+          for(let i=0; i<data.length; i++) {
+            console.log(data[i].name);
+            console.log(data[i].department);
+            html += ("이름: " + data[i].name + ", 학과: " + data[i].department + "<br>");
+            $("#list").html(html);
+          }
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+    <div id="list"></div>
+</body>
+</html>

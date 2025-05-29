@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#btn1").click(function(){
+        $.ajax({
+          url:"data.csv",
+          success:function(result){                      
+            $("#title").text("이름:"+result.split(",")[0]+",지역:"+result.split(",")[1]+",학과:"+result.split(",")[2]);
+          }
+        });
+      });
+      $("#btn2").click(function(){
+        $.ajax({
+          url:"data.xml",
+          success:function(result){   
+            console.log($(result).find("name").text());                   
+            $("#title").text("이름:"+$(result).find("name").text()+",지역:"+$(result).find("address").text()+",학과:"+$(result).find("department").text());
+          }
+        });
+      });
+      $("#btn3").click(function(){
+        $.ajax({
+          url:"data.json",
+          success:function(result){   
+            console.log(result.name);                   
+            $("#title").text("이름:"+result.name+",지역:"+result.address+",학과:"+result.department);
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+    <button id="btn1">csv</button>
+    <button id="btn2">xml</button>
+    <button id="btn3">json</button>
+    <h1 id="title"></h1>
+</body>
+</html>

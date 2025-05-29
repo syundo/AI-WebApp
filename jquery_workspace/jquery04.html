@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery04</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      let num=1; // 현재 순서를 기억하는 전역변수
+      $("#next").click(function() {
+        if(num == 5) {
+          num = 0;
+        }
+        num++;
+        $("img").attr("src","img/pic0" + num + ".jpg"); // src 속성값을 변경
+      });
+      $("#prev").click(function() {
+        if(num == 1) {
+          num = 6;
+        }
+        num--;
+        $("img").attr("src","img/pic0" + num + ".jpg"); // src 속성값을 변경
+      });
+      $("#btn1").click(function() {
+        $("img").removeAttr("src"); // src 속성 삭제
+      });
+    });
+  </script>
+</head>
+<body>
+  <button id="prev">prev</button>
+  <button id="next">next</button>
+  <div>
+    <img src="img/pic01.jpg" alt="image" style="width: 300px;">
+  </div>
+  <button id="btn1">src delete</button>
+</body>
+</html>

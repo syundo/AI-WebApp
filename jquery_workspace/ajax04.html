@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax04</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $.ajax({
+        url:"https://www.data.go.kr/catalog/15029361/fileData.json", // 서버 주소
+        // dataType: "json" // 서버에서 전송되는 데이터의 타입
+        success: function(data) { // data가 서버에서 날라온 데이터를 가리킴
+          console.log(JSON.parse(data));
+          let object = JSON.parse(data);
+          console.log(object.name);
+          console.log(object.description);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+    <div id="list"></div>
+</body>
+</html>

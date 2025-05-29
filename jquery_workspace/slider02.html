@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>slider02</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <style>
+    .animation_canvas {
+      width:600px; 
+      height:400px;
+      position:relative;          
+      overflow:hidden;
+    }
+
+    /* Slider Panel */
+    .slider_panel {
+      width:600px;
+      position:relative;
+    }
+    .slider_image {
+      width:600px;
+      height:400px;
+      position:absolute;
+      left:0;
+      top:0;
+    }
+    .slider_image:nth-child(1) {z-index: 5;} 
+    .slider_image:nth-child(2) {z-index: 4;} 
+    .slider_image:nth-child(3) {z-index: 3;} 
+    .slider_image:nth-child(4) {z-index: 2;} 
+    .slider_image:nth-child(5) {z-index: 1;} 
+
+    /* Control Panel */
+    .control_panel {
+      color:maroon;
+      width: 200px;
+      position:absolute; 
+      bottom:10px;
+      left:200px;
+      overflow:hidden;
+      z-index: 9999 !important;
+    }
+    .dot {
+      font-size:10px;
+      cursor:pointer;
+    }
+  </style>
+  <script>
+    $(document).ready(function () {
+      // 슬라이더를 움직여주는 함수
+      var prevIndex=0;
+      function moveSlider(index){ 
+        if(index==prevIndex){
+          return; // 함수 종료
+        }
+        $('.slider_panel img').not(index).css("z-index",-1000); // 현재 페이지를 제외한 나머지는 뒤로 보냄
+        $('.slider_panel img').eq(prevIndex).css("z-index",-500); // 이전(기존) 페이지는 중간 위치
+        $('.slider_panel img').eq(index).css("z-index",1000); // 현재 페이지(이동하려는 페이지)
+        // 애니메이션 방향을 반대로 주기 위해서
+        if(prevIndex>index){ // 왼쪽으로
+          $('.slider_panel img').eq(index).css("left","-600px");
+          $('.slider_panel img').eq(index).animate({left:0},500,"linear",null);                    
+        }else{ // 오른쪽으로
+          $('.slider_panel img').eq(index).css("left","600px");
+          $('.slider_panel img').eq(index).animate({left:0},500,"linear",null);
+        }
+        prevIndex=index;
+      };
+
+      $(".dot").click(function(){
+        moveSlider($(this).index());
+        });
+    });
+  </script>
+</head>
+<body>
+  <div class="animation_canvas">
+    <div class="slider_panel">
+      <img src="img/pic01.jpg" class="slider_image"/>
+      <img src="img/pic02.jpg" class="slider_image"/>
+      <img src="img/pic03.jpg" class="slider_image"/>
+      <img src="img/pic04.jpg" class="slider_image"/>
+      <img src="img/pic05.jpg" class="slider_image"/>
+    </div>
+    <div class="control_panel" style="text-align:center">
+      <span class="dot">◈</span>
+      <span class="dot">◈</span>
+      <span class="dot">◈</span>
+      <span class="dot">◈</span>
+      <span class="dot">◈</span>
+    </div>
+  </div>
+</body>
+</html>

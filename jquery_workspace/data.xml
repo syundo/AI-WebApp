@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<student>
+    <name>홍길동</name>
+    <address>서울</address>
+    <department>컴퓨터공학과</department>
+</student>

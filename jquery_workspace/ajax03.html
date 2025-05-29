@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax03</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $.ajax({
+        url:"data/history.json", // 서버 주소
+        success: function(data) { // data가 서버에서 날라온 데이터를 가리킴
+          // console.log(data);
+          $(data).each(function(index, element) {
+            // console.log(index);
+            // console.log(element);
+            console.log(element.year);
+            console.log(element.month);
+            console.log(element.title);
+
+            let html=element.year+"&nbsp;"+element.month+"&nbsp;"+element.title+"<br>"
+            $("#list").append(html);
+          });
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+    <div id="list"></div>
+</body>
+</html>

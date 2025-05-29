@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>요소 추가</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <style>
+		.container { 
+			display: block;
+			border: 1px solid lightgray;
+			padding: 5px;
+			margin: 15px;
+		}
+	</style>
+  <script>
+    $(function() {
+      $("#btn1").click(function() {
+        $(".container").append("<p>append</p>"); // css의 ::after 선택자와 같은 역할
+			});
+      $("#btn2").click(function() {
+        $(".container").prepend("<p>prepend</p>"); // css의 ::before 선택자와 같은 역할
+			});
+      $("#btn3").click(function() {
+        $(".container").before("<p>before</p>");
+			});
+      $("#btn4").click(function() {
+        $(".container").after("<p>after</p>");
+			});
+			$("#btn5").click(function() {
+        $(".container").append("<p>append 2</p>"); // css의 ::after 선택자와 같은 역할
+			});
+			$("#btn6").click(function() {
+        $(".container").prepend("<p>prepend 2</p>"); // css의 ::before 선택자와 같은 역할
+			});
+			$("#btn7").click(function() {
+        $(".container").before("<p>before 2</p>");
+			});
+			$("#btn8").click(function() {
+        $(".container").after("<p>after 2</p>");
+			});
+    });
+  </script>
+</head>
+<body>
+	<div class="container">
+		<p>jQuery</p>
+	</div>
+
+	<button id="btn1">append()</button>
+	<button id="btn2">prepend()</button>
+	<button id="btn3">before()</button>
+	<button id="btn4">after()</button>
+
+	<p>참고용</p>
+	<button id="btn5">append() 2</button>
+	<button id="btn6">prepend() 2</button>
+	<button id="btn7">before() 2</button>
+	<button id="btn8">after() 2</button>
+</body>
+</html>

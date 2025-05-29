@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>형제 찾기</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <style>
+		.container * { 
+			display: block;
+			border: 1px solid lightgray;
+			padding: 5px;
+			margin: 15px;
+		}
+	</style>
+  <script>
+    $(function() {
+      $("#btn1").click(function() {
+        $("h4").siblings().css({"border":"2px solid red"});
+			});
+      $("#btn2").click(function() {
+        $("h4").prev().css({"border":"2px solid blue"});
+			});
+      $("#btn3").click(function() {
+				$("h4").prevAll().css({"border":"2px solid green"});
+			});
+      $("#btn4").click(function() {
+				$("h4").prevUntil("div").css({"border":"2px solid yellow"});
+			});
+    });
+  </script>
+</head>
+<body>
+	<div class="container">
+		<div>div 요소</div>
+		<h2>h2 요소</h2>
+		<h3>h3 요소</h3>
+		<h4>h4 요소 (기준)</h4>
+		<h5>h5 요소</h5>
+		<h6>h6 요소</h6>
+		<p>p 요소</p>
+	</div>
+
+	<button id="btn1">h4 요소의 형제 요소들 모두(먼저 나오는 것 포함)</button>
+	<button id="btn2">h4 요소의 형제 요소들 중 먼저 나오는 것(하나만)</button>
+	<button id="btn3">h4 요소의 형제 요소들 중 먼저 나오는 것 모두</button>
+	<button id="btn4">h4 요소의 형제 요소들 중 지정한 요소 전까지</button>
+</body>
+</html>
